@@ -44,8 +44,6 @@ def GetNumbersAround(array, startCoords):
     coordsSearched = []
     numbersFound = []
     for coord in coordsToSearch:
-        # if len(coordsSearched) > 0:
-        #     print(f"Coords searched: {coordsSearched}")
         if coord not in coordsSearched:
             if coord[0] < len(array) and coord[0] >= 0: # bounds check
                 if coord[1] < len(array[coord[0]]) and coord[1] >= 0: # bounds check
@@ -60,7 +58,6 @@ def GetNumbersAround(array, startCoords):
                             coordsSearched.append((coord[0], index))
                         
                         num = leftDigits + array[coord[0]][coord[1]] + rightDigits
-                        # print(f"Searching: {array[coord[0]][coord[1]]} found {num} range: ({rangeStart}, {rangeEnd})")
                         numbersFound.append(num)
     return numbersFound
 
@@ -72,7 +69,6 @@ while i < len(engine):
     while j < len(engine[i]):
         if engine[i][j] == '*':
             numbers = GetNumbersAround(engine, (i, j))
-            print(numbers, i, j)
             if len(numbers) == 2:
                 result += int(numbers[0]) * int(numbers[1])
         j += 1

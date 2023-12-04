@@ -1,10 +1,6 @@
 import re
 from typing import List
 
-from datetime import datetime
-
-startTime = datetime.now()
-
 lines = []
 with open('./input.txt') as f:
     lines = f.readlines()
